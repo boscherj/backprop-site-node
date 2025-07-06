@@ -19,7 +19,6 @@ const sections = [
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const path = usePathname() || '/'
-  const mainPaddingTop = path === '/' ? 'pt-44' : 'pt-4'
 
   return (
     <html lang="fr">
@@ -27,23 +26,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Sidebar */}
         <aside className="w-60 bg-white flex flex-col pt-16 px-8 space-y-4">
           <div className="text-2xl font-bold mb-12">BackProp</div>
-          {sections.map((s) => {
+          {sections.map(s => {
             const active = path === s.href
             return (
               <Link
                 key={s.href}
                 href={s.href}
                 className={
-                  `group block py-2 px-3 rounded-lg transition-colors ` +
-                  (active ? 'bg-gray-100 font-semibold text-black' : 'text-gray-700 hover:bg-gray-50')
+                  `block py-2 px-3 rounded-lg transition-colors ` +
+                  (active
+                    ? 'bg-gray-100 font-semibold text-black'
+                    : 'text-gray-700 hover:bg-gray-50')
                 }
               >
-                <span className="flex-1">{s.label}</span>
-                {!active && (
-                  <span className="opacity-0 group-hover:opacity-100 text-gray-500 ml-2">
-                    ➔
-                  </span>
-                )}
+                {s.label}
               </Link>
             )
           })}
@@ -61,8 +57,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </button>
           </header>
 
-          {/* Page content with dynamic padding */}
-          <main className={`flex-1 px-8 ${mainPaddingTop} overflow-auto`}>
+          {/* Page content */}
+          <main className="flex-1 px-8 pt-44 overflow-auto">
             {children}
           </main>
         </div>
