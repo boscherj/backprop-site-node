@@ -79,8 +79,10 @@ export default function ExpertisePage() {
     <div className="flex-1 max-w-[1400px] mx-auto px-8 pt-4 pb-12">
       {/* Intro section */}
       <section className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold mb-4">
-          Notre expertise <span className="text-5xl font-black">BackProp</span>
+      
+        <h1 
+        className="text-4xl font-extralight font-ralewaylight mb-4">
+          Notre expertise <span className="text-5xl">BackProp</span>
         </h1>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
           Notre expertise en Intelligence Artificielle ne date pas d’hier ! Nous en avons suivi toutes les
