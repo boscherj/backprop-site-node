@@ -5,11 +5,11 @@ import { ArrowUp } from 'lucide-react'
 export default function ChatWidget() {
   const [query, setQuery] = useState('')
   const suggestions = [
-    'Search with ChatGPT',
-    'Talk with ChatGPT',
-    'Research',
-    'Sora',
-    'More'
+    'Formations ChatGPT',
+    'MidJourney',
+    'Agents IA',
+    'Outils IA',
+    'Conseil IA'
   ]
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,7 +22,7 @@ export default function ChatWidget() {
   return (
     <div className="w-full max-w-3xl flex flex-col items-center">
       {/* Titre */}
-      <h2 className="text-3xl font-bold mb-6">What can I help with?</h2>
+      <h2 className="text-3xl font-semibold mb-6">Comment pouvons-nous vous aider ?</h2>
 
       {/* Formulaire avec textarea */}
       <form onSubmit={handleSubmit} className="w-full">
@@ -31,11 +31,8 @@ export default function ChatWidget() {
             rows={3}
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="India stock market today"
-            className={
-              `w-full bg-white border border-gray-300 rounded-full py-4 px-6 pr-16 text-lg ` +
-              `resize-none focus:outline-none`
-            }
+            placeholder="Quelles sont les formations IA proposées par BackProp ?"
+            className="w-full resize-none rounded-full border border-gray-300 bg-white py-4 px-6 pr-16 text-lg placeholder:text-gray-500 focus:outline-none"
           />
           <button
             type="submit"
